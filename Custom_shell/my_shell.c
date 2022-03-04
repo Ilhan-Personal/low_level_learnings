@@ -42,7 +42,7 @@ int main(int argc, char* argv[]){
     char **tokens;
     int i;
     while(1){
-        bzero(line,sizeof(line));
+        memset(line,0,sizeof(line));
         printf("$ ");
         scanf("%[^\n]",line);
         getchar();
