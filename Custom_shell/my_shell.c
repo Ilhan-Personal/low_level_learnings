@@ -1,9 +1,9 @@
-#include<stdio.h>
-#include<sys/types.h>
-#include<sys/wait.h>
-#include<stdlib.h>
-#include<string.h>
-#include<unistd.h>
+#include <stdio.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
 
 #define MAX_INPUT_SIZE 1024
 #define MAX_TOKEN_SIZE 64
@@ -35,9 +35,8 @@ char** tokenize_string(char *line){
 }
 
 
-
-
 int main(int argc, char* argv[]){
+    printf("Welcome to Custom Shell!\n\n");
     char line[MAX_INPUT_SIZE];
     char **tokens;
     int i;
@@ -71,3 +70,4 @@ int main(int argc, char* argv[]){
     }
     return 0;
 }
+
