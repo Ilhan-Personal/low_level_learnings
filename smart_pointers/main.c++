@@ -21,16 +21,27 @@ public:
     }
 };
 
+void useSmartPointer() {
+    try {
+        // Create a unique_ptr to manage the Car object
+        std::unique_ptr<Car> carPtr = std::make_unique<Car>();
+        
+        carPtr->drive();
+        
+        carPtr->setSpeed(10);
+        carPtr->getSpeed();
+        
+        // Simulate an exception
+        throw std::runtime_error("An error occurred while using smart pointer");
+        
+    } catch (const std::exception& e) {
+        std::cerr << e.what() << std::endl;
+    }
+}
+
 int main() {
-    // Create a unique_ptr to manage the Car object
-    std::unique_ptr<Car> carPtr = std::make_unique<Car>();
-    
-    // Use the car object through the smart pointer
-    carPtr->drive();
-    
-    // The car object will be automatically deleted when the unique_ptr goes out of scope
-    carPtr->setSpeed(10);
-    carPtr->getSpeed();
+    cout << "Using smart pointer:" << endl;
+    useSmartPointer();
 
     return 0;
 }
